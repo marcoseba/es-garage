@@ -10,7 +10,7 @@ public class Piano {
 	private PostoAutoNormale[] postiAutoNormale;
 	private int numTotVan;
 	private int numTotLusso;
-    private int numTotNormale;
+        private int numTotNormale;
 	private int numPiano;
 	
 	
