@@ -5,13 +5,14 @@ import java.util.Date;
 
 public class Piano {
 
-	private PostoAutoVan[] postiAutoVan;
-	private PostoAutoLusso[] postiAutoLusso;
-	private PostoAutoNormale[] postiAutoNormale;
+	
 	private int numTotVan;
 	private int numTotLusso;
-        private int numTotNormale;
+    private int numTotNormale;
 	private int numPiano;
+	private PostoAutoVan[] postiAutoVan;  //dichiarazione vettore
+	private PostoAutoLusso[] postiAutoLusso;
+	private PostoAutoNormale[] postiAutoNormale;
 	
 	
 	public Piano(int numTotVan, int numTotLusso, int numTotNormale, int numPiano) {
@@ -20,15 +21,9 @@ public class Piano {
 		this.numTotVan = numTotVan;
 		this.numTotLusso = numTotLusso;
 		this.numTotNormale = numTotNormale;
-		
-		for( int i = 0; i < numTotVan ; i++ ) 			
-			postiAutoVan[i] = new PostoAutoVan();
-
-		for( int i = 0; i < numTotLusso ; i++ ) 			
-			postiAutoLusso[i] = new PostoAutoLusso();
-		
-		for( int i = 0; i < numTotNormale ; i++ ) 			
-			postiAutoNormale[i] = new PostoAutoNormale();
+		this.postiAutoVan = new PostoAutoVan[numTotVan];  //creazione vettore
+		this.postiAutoLusso = new PostoAutoLusso[numTotLusso];
+		this.postiAutoNormale = new PostoAutoNormale[numTotNormale];
 		
 	}
 	

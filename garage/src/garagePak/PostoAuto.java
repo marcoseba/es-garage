@@ -67,6 +67,10 @@ public class PostoAuto {
 	public Date getDate() {
 		return data;
 	}
-
+	
+	public long getTime() {
+		
+		return data.getTime();
+	}
 	
 }
