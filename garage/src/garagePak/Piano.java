@@ -20,11 +20,11 @@ public class Piano {
 		this.numTotVan = numTotVan;
 		this.numTotLusso = numTotLusso;
 		this.numTotNormale = numTotNormale;
-		this.postiAutoVan = new PostoAutoVan[numTotVan];  //creazione vettore
+		this.postiAutoVan = new PostoAutoVan[numTotVan];  //creazione vettore con rif.->null
 		this.postiAutoLusso = new PostoAutoLusso[numTotLusso];
 		this.postiAutoNormale = new PostoAutoNormale[numTotNormale];
 		
-		for(int i = 0; i<numTotVan ;i++) {
+		for(int i = 0; i<numTotVan; i++) {                //inizializzazione
 			postiAutoVan[i] = new PostoAutoVan();
 		}
 		for(int i = 0; i<numTotNormale ;i++) {
@@ -275,7 +275,7 @@ public class Piano {
 		for( int i = 0; i < numTotVan ; i++ ) {			
 			if( postiAutoVan[i].getIDPosto() == IDPosto) {
 				
-				long orarioIniziale = postiAutoVan[i].getDate().getTime();
+				long orarioIniziale = postiAutoVan[i].getTime();
 				Date date = new Date();
 				long orarioFinale = date.getTime();
 				long durata = orarioFinale - orarioIniziale;
@@ -303,7 +303,7 @@ public class Piano {
 		for( int i = 0; i < numTotLusso ; i++ ) {
 			if( postiAutoLusso[i].getIDPosto() == IDPosto) {
 
-				long orarioIniziale = postiAutoLusso[i].getDate().getTime();
+				long orarioIniziale = postiAutoLusso[i].getTime();
 				Date date = new Date();
 				long orarioFinale = date.getTime();
 				long durata = orarioFinale - orarioIniziale;
@@ -329,7 +329,7 @@ public class Piano {
 		for( int i = 0; i < numTotNormale ; i++ ) {
 			if( postiAutoNormale[i].getIDPosto() == IDPosto) {
 
-				long orarioIniziale = postiAutoNormale[i].getDate().getTime();
+				long orarioIniziale = postiAutoNormale[i].getTime();
 				Date date = new Date();
 				long orarioFinale = date.getTime();
 				long durata = orarioFinale - orarioIniziale;

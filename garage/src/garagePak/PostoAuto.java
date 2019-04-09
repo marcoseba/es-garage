@@ -64,10 +64,10 @@ public class PostoAuto {
 	}
 
 	
-	public Date getDate() {
-		return data;
+	public Object getDate() {
+		return data.clone();
 	}
-	
+
 	public long getTime() {
 		
 		return data.getTime();
