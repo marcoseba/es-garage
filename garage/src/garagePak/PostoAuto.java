@@ -64,8 +64,8 @@ public class PostoAuto {
 	}
 
 	
-	public Object getDate() {
-		return data.clone();
+	public Date getDate() {
+		return data;
 	}
 
 	
