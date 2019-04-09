@@ -241,7 +241,7 @@ public class Piano {
 				postiAutoVan[i].setOccupato(false);
 				postiAutoVan[i].setAbbonato(false); 		
 				System.out.println( "POSTO AUTO LIBERATO!\nID = "+postiAutoVan[i].getIDPosto()+"\n");
-			    return postiAutoVan[i].getIDPosto();
+			        return postiAutoVan[i].getIDPosto();
 			}
 		}	
 		for(int i = 0; i < numTotLusso ; i++ ) {
@@ -250,7 +250,7 @@ public class Piano {
 				postiAutoLusso[i].setOccupato(false);
 				postiAutoLusso[i].setAbbonato(false); 		
 				System.out.println( "POSTO AUTO LIBERATO!\nID = "+postiAutoLusso[i].getIDPosto()+"\n");
-			    return postiAutoLusso[i].getIDPosto();
+			        return postiAutoLusso[i].getIDPosto();
 			}
 		}	
 		
@@ -290,7 +290,7 @@ public class Piano {
 					int ore   = (int) ((durata / (1000*60*60)) % 24);
 					String dataCorrente = Integer.toString(ore)+":"+Integer.toString(minuti)+":"+Integer.toString(secondi);
 					return dataCorrente;
-			    }	
+			       }	
 			}
 		}
 		
@@ -364,7 +364,7 @@ public class Piano {
 				
 				return count1;	
 				
-		case "Lusso":
+		        case "Lusso":
 				int count2=0;
 				for(int i = 0; i < numTotLusso ; i++ ) {
 					if( postiAutoLusso[i].getOccupato() == true )
@@ -384,6 +384,6 @@ public class Piano {
 				return count3;			
 	
 		}
-	    return 0;
+	        return 0;
 	}
 }
