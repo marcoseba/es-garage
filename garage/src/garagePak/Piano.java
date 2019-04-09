@@ -5,7 +5,6 @@ import java.util.Date;
 
 public class Piano {
 
-	
 	private int numTotVan;
 	private int numTotLusso;
     private int numTotNormale;
@@ -25,6 +24,15 @@ public class Piano {
 		this.postiAutoLusso = new PostoAutoLusso[numTotLusso];
 		this.postiAutoNormale = new PostoAutoNormale[numTotNormale];
 		
+		for(int i = 0; i<numTotVan ;i++) {
+			postiAutoVan[i] = new PostoAutoVan();
+		}
+		for(int i = 0; i<numTotNormale ;i++) {
+			postiAutoNormale[i] = new PostoAutoNormale();
+		}
+		for(int i = 0; i<numTotLusso ;i++) {
+			postiAutoLusso[i] = new PostoAutoLusso();
+		}
 	}
 	
 	public boolean verificaPieno( String tipoAuto ) {
@@ -123,7 +131,7 @@ public class Piano {
 					if( postiAutoVan[i].getOccupato() == false ) {
 	
 						postiAutoVan[i].setOccupato(true);
-						System.out.println( "POSTO AUTO PRENOTATO!\n\n"+
+						System.out.println( "\n\nPOSTO AUTO PRENOTATO!\n"+
 								            "\nID = "+postiAutoVan[i].getIDPosto()+
 								            "\nDATA = "+postiAutoVan[i].getDate()				               
 								             );
@@ -139,7 +147,7 @@ public class Piano {
 					if( postiAutoLusso[i].getOccupato() == false ) {
 						
 						postiAutoLusso[i].setOccupato(true);
-						System.out.println( "POSTO AUTO PRENOTATO!\n\n"+
+						System.out.println( "\n\nPOSTO AUTO PRENOTATO!\n"+
 								            "\nID = "+postiAutoLusso[i].getIDPosto()+
 								            "\nDATA = "+postiAutoLusso[i].getDate()				               
 								             );
@@ -155,7 +163,7 @@ public class Piano {
 					if( postiAutoNormale[i].getOccupato() == false ) {
 						
 						postiAutoNormale[i].setOccupato(true); 
-						System.out.println( "POSTO AUTO PRENOTATO!\n\n"+
+						System.out.println( "\n\nPOSTO AUTO PRENOTATO!\n"+
 								            "\nID = "+postiAutoNormale[i].getIDPosto()+
 								            "\nDATA = "+postiAutoNormale[i].getDate()				               
 								             );
@@ -180,7 +188,7 @@ public class Piano {
 	
 						postiAutoVan[i].setOccupato(true);
 						postiAutoVan[i].setAbbonato(true); 
-						System.out.println( "ABBONAMENTO POSTO AUTO EFFETTUATO!\n\n"+
+						System.out.println( "\n\nABBONAMENTO POSTO AUTO EFFETTUATO!\n"+
 								            "\nID = "+postiAutoVan[i].getIDPosto()+
 								            "\nDATA = "+postiAutoVan[i].getDate()					               
 								             );
@@ -197,7 +205,7 @@ public class Piano {
 	
 						postiAutoLusso[i].setOccupato(true);
 						postiAutoLusso[i].setAbbonato(true); 
-						System.out.println( "ABBONAMENTO POSTO AUTO EFFETTUATO!\n\n"+
+						System.out.println( "\n\nABBONAMENTO POSTO AUTO EFFETTUATO!\n"+
 								            "\nID = "+postiAutoLusso[i].getIDPosto()+
 								            "\nDATA = "+postiAutoLusso[i].getDate()					               
 								             );
@@ -214,7 +222,7 @@ public class Piano {
 	
 						postiAutoNormale[i].setOccupato(true);
 						postiAutoNormale[i].setAbbonato(true); 
-						System.out.println( "ABBONAMENTO POSTO AUTO EFFETTUATO!\n\n"+
+						System.out.println( "\n\nABBONAMENTO POSTO AUTO EFFETTUATO!\n"+
 								            "\nID = "+postiAutoNormale[i].getIDPosto()+
 								            "\nDATA = "+postiAutoNormale[i].getDate()					               
 								             );
@@ -235,8 +243,8 @@ public class Piano {
 				
 				postiAutoVan[i].setOccupato(false);
 				postiAutoVan[i].setAbbonato(false); 		
-				System.out.println( "POSTO AUTO LIBERATO!\nID = "+postiAutoVan[i].getIDPosto()+"\n");
-			        return postiAutoVan[i].getIDPosto();
+				System.out.println( "\n\nPOSTO AUTO LIBERATO!\nID = "+postiAutoVan[i].getIDPosto()+"\n");
+			    return postiAutoVan[i].getIDPosto();
 			}
 		}	
 		for(int i = 0; i < numTotLusso ; i++ ) {
@@ -244,8 +252,8 @@ public class Piano {
 
 				postiAutoLusso[i].setOccupato(false);
 				postiAutoLusso[i].setAbbonato(false); 		
-				System.out.println( "POSTO AUTO LIBERATO!\nID = "+postiAutoLusso[i].getIDPosto()+"\n");
-			        return postiAutoLusso[i].getIDPosto();
+				System.out.println( "\n\nPOSTO AUTO LIBERATO!\nID = "+postiAutoLusso[i].getIDPosto()+"\n");
+			    return postiAutoLusso[i].getIDPosto();
 			}
 		}	
 		
@@ -254,7 +262,7 @@ public class Piano {
 	
 				postiAutoNormale[i].setOccupato(false);
 				postiAutoNormale[i].setAbbonato(false); 		
-				System.out.println( "POSTO AUTO LIBERATO!\nID = "+postiAutoNormale[i].getIDPosto()+"\n");
+				System.out.println( "\n\nPOSTO AUTO LIBERATO!\nID = "+postiAutoNormale[i].getIDPosto()+"\n");
 				return postiAutoNormale[i].getIDPosto();
 			}
 		}
@@ -274,8 +282,10 @@ public class Piano {
 				
 				if( postiAutoVan[i].getOccupato() == true && postiAutoVan[i].getAbbonato() == true) {
 					
-					int days = (int) (durata / (1000*60*60*24));						
+					int days = (int) (durata / (1000*60*60*24));					
+					System.out.println("\n\nINTERVALLO PERMANENZA: "+Integer.toString(days));
 					return Integer.toString(days);
+					
 					
 				}
 				else if( postiAutoVan[i].getOccupato() == true ) {
@@ -283,9 +293,10 @@ public class Piano {
 					int secondi = (int) (durata / 1000) % 60 ;
 					int minuti = (int) ((durata / (1000*60)) % 60);
 					int ore   = (int) ((durata / (1000*60*60)) % 24);
-					String dataCorrente = Integer.toString(ore)+":"+Integer.toString(minuti)+":"+Integer.toString(secondi);
-					return dataCorrente;
-			       }	
+					String intervalloPermanenza = Integer.toString(ore)+":"+Integer.toString(minuti)+":"+Integer.toString(secondi);
+					System.out.println("\n\nINTERVALLO PERMANENZA: "+intervalloPermanenza);
+					return intervalloPermanenza;
+			    }	
 			}
 		}
 		
@@ -300,6 +311,7 @@ public class Piano {
 				if( postiAutoLusso[i].getOccupato() == true && postiAutoLusso[i].getAbbonato() == true) {
 					
 					int days = (int) (durata / (1000*60*60*24));						
+					System.out.println("\n\nINTERVALLO PERMANENZA: "+Integer.toString(days));
 					return Integer.toString(days);
 				}
 				else if( postiAutoLusso[i].getOccupato() == true ){
@@ -307,8 +319,9 @@ public class Piano {
 					int secondi = (int) (durata / 1000) % 60 ;
 					int minuti = (int) ((durata / (1000*60)) % 60);
 					int ore   = (int) ((durata / (1000*60*60)) % 24);
-					String dataCorrente = Integer.toString(ore)+":"+Integer.toString(minuti)+":"+Integer.toString(secondi);
-					return dataCorrente;
+					String intervalloPermanenza = Integer.toString(ore)+":"+Integer.toString(minuti)+":"+Integer.toString(secondi);
+					System.out.println("\n\nINTERVALLO PERMANENZA: "+intervalloPermanenza);
+					return intervalloPermanenza;
 				}	
 			}	
 		}	
@@ -324,6 +337,7 @@ public class Piano {
 				if( postiAutoNormale[i].getOccupato() == true && postiAutoNormale[i].getAbbonato() == true) {
 					
 					int days = (int) (durata / (1000*60*60*24));					
+					System.out.println("\n\nINTERVALLO PERMANENZA: "+Integer.toString(days));
 					return Integer.toString(days);
 				}
 				else if( postiAutoNormale[i].getOccupato() == true ){
@@ -331,8 +345,9 @@ public class Piano {
 					int secondi = (int) (durata / 1000) % 60 ;
 					int minuti = (int) ((durata / (1000*60)) % 60);
 					int ore   = (int) ((durata / (1000*60*60)) % 24);
-					String dataCorrente = Integer.toString(ore)+":"+Integer.toString(minuti)+":"+Integer.toString(secondi);
-					return dataCorrente;
+					String intervalloPermanenza = Integer.toString(ore)+":"+Integer.toString(minuti)+":"+Integer.toString(secondi);
+					System.out.println("\n\nINTERVALLO PERMANENZA: "+intervalloPermanenza);
+					return intervalloPermanenza;
 				}	
 			}
 		}
@@ -356,16 +371,16 @@ public class Piano {
 					if( postiAutoVan[i].getOccupato() == true )
 						count1++;				
 				}
-				
+				System.out.println("\n\nNUMERO DI POSTI VAN OCCUPATI: "+count1);
 				return count1;	
 				
-		        case "Lusso":
+		case "Lusso":
 				int count2=0;
 				for(int i = 0; i < numTotLusso ; i++ ) {
 					if( postiAutoLusso[i].getOccupato() == true )
 						count2++;				
 				}
-				
+				System.out.println("\n\nNUMERO DI POSTI LUSSO OCCUPATI: "+count2);
 				return count2;						
 
 			
@@ -375,10 +390,12 @@ public class Piano {
 					if( postiAutoNormale[i].getOccupato() == true )
 						count3++;				
 				}
-				
+				System.out.println("\n\nNUMERO DI POSTI NORMALE OCCUPATI: "+count3);
 				return count3;			
 	
 		}
-	        return 0;
+	    return 0;
+	    
 	}
+	
 }

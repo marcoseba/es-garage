@@ -33,7 +33,7 @@ public class provaPostiAuto {
 		double c = id+454.545;
 		
 		Piano primopiano = new Piano(12,12,12,1);
-		int ID = primopiano.prenotaAbbonamento("Van");
+		int ID = primopiano.prenotaAbbonamento("Lusso");
 		System.out.println(ID);
 		
 			
