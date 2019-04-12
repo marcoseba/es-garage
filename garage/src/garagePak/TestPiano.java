@@ -9,7 +9,7 @@ public class TestPiano {
 		p1.prenotaAbbonamento("Lusso");
 		p1.getPiano();
 		
-		p1.getPostiOccupati("Van");
+		p1.getPostiLiberi("Van");
 		
 		p1.tempoPermanenza(2);
 		p1.liberaPosto(2);
